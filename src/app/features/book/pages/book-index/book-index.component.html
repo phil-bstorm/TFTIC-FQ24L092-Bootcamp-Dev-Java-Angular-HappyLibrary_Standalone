@@ -1,0 +1,24 @@
+<button class="green"><a routerLink="/book/create">Create new book</a></button>
+<table>
+  <caption><h2>Book list</h2></caption>
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Release date</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+    @for (book of books; track book.id) {
+      <tr>
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.releaseDate | date:'dd MMMM yyyy' }}</td>
+        <td>
+          <button class="blue"><a [routerLink]="'/book/' + book.id">Details</a></button>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
