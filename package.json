@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "fakeApi": "json-server --watch json-server/fakeApi.json -m ./node_modules/json-server-auth"
+    "fakeApi": "json-server --watch json-server/fakeApi.json -m ./node_modules/json-server-auth",
+    "fakeApi:secured": "node json-server/json-server.js"
   },
   "private": true,
   "dependencies": {
