@@ -1,5 +1,21 @@
 {
-  "users": [],
+  "users": [
+    {
+      "email": "test@test.test",
+      "password": "$2a$10$ixhRGr0iQlwNECtuPl/ME.d7ESuhi8ywxmVpJYLhZUVhlt2io7lg.",
+      "id": 1
+    },
+    {
+      "email": "test2@test.test",
+      "password": "$2a$10$4obph/w6zohHsc.7aBhuHe/HJPuCAl0xZuluQVoRgmoX6rbaruXK.",
+      "id": 2
+    },
+    {
+      "email": "test3@test.test",
+      "password": "$2a$10$rrmF4d59YNYD0fNbv2tBbe8aJjSTua1v6EjWQUJsJrk6nnQ2.i5ce",
+      "id": 3
+    }
+  ],
   "books": [
     {
       "id": 1,

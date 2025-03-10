@@ -3,4 +3,11 @@
   @for (link of links; track link.url) {
     <a [routerLink]="link.url">{{ link.title }}</a>
   }
+
+  @if(!userConnected()) {
+    <a routerLink="/auth/register">Register</a>
+    <a routerLink="/auth/login">Login</a>
+  }@else{
+    <button>Logout</button>
+  }
 </nav>
