@@ -22,7 +22,7 @@ export class BookCreateComponent {
 
   constructor() {
     this.bookForm = this._fb.group({
-      isbn: [null,[Validators.required,Validators.minLength(11),Validators.maxLength(13)]],
+      isbn: [null,[Validators.required,Validators.minLength(3),Validators.maxLength(13)]],
       title: [null,[Validators.required,Validators.maxLength(50)]],
       author: [null,[Validators.required,Validators.maxLength(50)]],
       description: [null,[Validators.maxLength(255)]],
