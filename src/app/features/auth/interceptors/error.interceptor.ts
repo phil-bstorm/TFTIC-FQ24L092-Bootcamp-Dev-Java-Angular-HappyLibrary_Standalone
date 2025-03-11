@@ -2,9 +2,11 @@ import { HttpInterceptorFn } from '@angular/common/http';
 import {catchError, throwError} from 'rxjs';
 import {Router} from '@angular/router';
 import {inject} from '@angular/core';
+import {AuthService} from '../services/auth.service';
 
 export const errorInterceptor: HttpInterceptorFn = (req, next) => {
   const router:Router = inject(Router);
+  const authService: AuthService = inject(AuthService);
 
   return next(req).pipe(
     catchError(error => {
@@ -12,6 +14,7 @@ export const errorInterceptor: HttpInterceptorFn = (req, next) => {
 
       if(error.status === 401){
         // redirection vers auth/login
+        authService.logout();
         router.navigate(['/auth/login']);
         return throwError(() => null);
       }
@@ -25,6 +28,7 @@ export const errorInterceptor: HttpInterceptorFn = (req, next) => {
       /*
       switch (error.status){
         case 401:
+          authService.logout();
           router.navigate(['/auth/login']);
           return throwError(() => null);
         case 500:

@@ -47,4 +47,9 @@ export class AuthService {
       })
     );
   }
+
+  logout(){
+    localStorage.removeItem('currentUser');
+    this.currentUser.set(null);
+  }
 }
