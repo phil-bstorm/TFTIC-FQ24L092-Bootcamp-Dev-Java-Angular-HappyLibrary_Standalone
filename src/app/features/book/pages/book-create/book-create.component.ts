@@ -41,7 +41,10 @@ export class BookCreateComponent {
         this._router.navigate(['/book']);
       },
       error: err => {
-        console.log(err);
+        console.log("Erreur dans le createBook", err);
+        if(err) {
+          console.log(err);
+        }
       }
     });
   }
